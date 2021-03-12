@@ -102,7 +102,8 @@ class ProdutoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $produto = Produto::findOrFail($id);
+        return view('produto.edit', ['produto' => $produto]);
     }
 
     /**
@@ -114,7 +115,25 @@ class ProdutoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $message = [
+            'nome.required' => 'O campo nome é obrigatório!',
+            'nome.min' => 'O campo nome precisa ser maior do que :min !',
+            'descricao.required' => 'O campo descrição é obrigatório!',
+        ];
+
+        $validatedData = $request->validate([
+            'nome' => 'required|min:8',
+            'descricao' => 'required',
+        ], $message);
+
+        $produto = Produto::findOrFail($id);
+        $produto->nome      = $request->nome;
+        $produto->descricao = $request->descricao;
+        $produto->save();
+
+        return redirect()->route('produto.index')->with('message', 'Produto atualizado com sucesso!');
+
     }
 
     /**
