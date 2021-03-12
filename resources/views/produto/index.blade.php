@@ -128,10 +128,10 @@
                                         <td><a class="btn btn-warning" href="{{ URL::to('produto/' . $value->id . '/edit') }}">Editar</a></td>
 
                                         <td>
-                                        {{-- Form::open(array('url' => 'produto/' . $value->id, 'onsubmit' => 'return ConfirmDelete()')) --}}
-                                        {{-- Form::hidden('_method', 'DELETE') --}}
-                                        {{-- Form::submit('Excluir', array('class' => 'btn btn-danger')) --}}
-                                        {{-- Form::close() --}}
+                                        {{ Form::open(array('url' => 'produto/' . $value->id, 'onsubmit' => 'return ConfirmDelete()')) }}
+                                        {{ Form::hidden('_method', 'DELETE') }}
+                                        {{ Form::submit('Excluir', array('class' => 'btn btn-danger')) }}
+                                        {{ Form::close() }}
                                     </td>
 
 
