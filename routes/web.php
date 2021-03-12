@@ -50,3 +50,5 @@ Route::get('/produto/{id}/edit', [ProdutoController::class, 'edit'])->name('prod
 // edit - salva formulário no banco
 Route::put('/produto/{id}', [ProdutoController::class, 'update'])->name('produto.update');
 
+// destroy - deleta um produto
+Route::delete('produto/{id}', [ProdutoController::class, 'destroy'])->name('produto.destroy');

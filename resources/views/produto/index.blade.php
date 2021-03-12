@@ -132,9 +132,7 @@
                                         {{ Form::hidden('_method', 'DELETE') }}
                                         {{ Form::submit('Excluir', array('class' => 'btn btn-danger')) }}
                                         {{ Form::close() }}
-                                    </td>
-
-
+                                        </td>
 
                                 </tr>
 
