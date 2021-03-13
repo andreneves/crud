@@ -34,9 +34,7 @@ class ProdutoController extends Controller
     public function index()
     {
         $produtos = Produto::orderBy('nome', 'ASC')->get();
-
-        //dd($produtos);
-
+        //$produtos = Produto::orderBy('nome', 'ASC')->paginate(10);
         return view('produto.index', ['produtos' => $produtos]);
 
     }
