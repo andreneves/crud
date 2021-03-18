@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\Produto;
+use App\Models\Categoria;
 
 class ProdutoController extends Controller
 {
@@ -47,8 +48,11 @@ class ProdutoController extends Controller
     public function create()
     {
 
-        //dd('create');
-        return view('produto.create');
+        $categorias = Categoria::All();
+
+        //dd($categorias);
+
+        return view('produto.create', ['categorias' => $categorias]);
     }
 
     /**
