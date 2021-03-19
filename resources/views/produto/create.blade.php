@@ -89,6 +89,9 @@
             -->
             {{ Form::open(array('url' => '/produto/create')) }}
 
+            {{ Form::label('categoria', 'Categoria ') }}
+            {{ Form::select('categoria_id', $categorias) }}
+            <br>
             {{ Form::label('nome', 'Nome') }}
             {{ Form::text('nome') }}
             <br>
