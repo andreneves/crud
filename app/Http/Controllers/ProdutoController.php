@@ -37,7 +37,6 @@ class ProdutoController extends Controller
         $produtos = Produto::orderBy('nome', 'ASC')->get();
         //$produtos = Produto::orderBy('nome', 'ASC')->paginate(10);
         return view('produto.index', ['produtos' => $produtos]);
-
     }
 
     /**

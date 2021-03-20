@@ -109,6 +109,7 @@
                             <thead>
                                 <tr>
                                     <th>ID</th>
+                                    <th>Categoria</th>
                                     <th>Nome</th>
                                     <th>Descricao</th>
                                     <th></th>
@@ -120,6 +121,7 @@
                                 @foreach($produtos as $key => $value)
                                 <tr>
                                     <td>{{ $value->id }}</td>
+                                    <td>{{ $value->categoria->nome }}</td>
                                     <td>{{ $value->nome }}</td>
                                     <td>{{ $value->descricao }}</td>
 
