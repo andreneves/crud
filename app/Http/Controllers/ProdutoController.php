@@ -121,16 +121,19 @@ class ProdutoController extends Controller
             'nome.required' => 'O campo nome é obrigatório!',
             'nome.min' => 'O campo nome precisa ser maior do que :min !',
             'descricao.required' => 'O campo descrição é obrigatório!',
+            'categoria_id.required' => 'O campo categoria é obrigatório!',
         ];
 
         $validatedData = $request->validate([
             'nome' => 'required|min:8',
             'descricao' => 'required',
+            'categoria_id' => 'required',
         ], $message);
 
         $produto = Produto::findOrFail($id);
         $produto->nome      = $request->nome;
         $produto->descricao = $request->descricao;
+        $produto->categoria_id = $request->categoria_id;
         $produto->save();
 
         return redirect()->route('produto.index')->with('message', 'Produto atualizado com sucesso!');
