@@ -103,7 +103,8 @@ class ProdutoController extends Controller
     public function edit($id)
     {
         $produto = Produto::findOrFail($id);
-        return view('produto.edit', ['produto' => $produto]);
+        $categorias = Categoria::pluck('nome','id');
+        return view('produto.edit', ['produto' => $produto, 'categorias' => $categorias]);
     }
 
     /**

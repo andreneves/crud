@@ -71,6 +71,7 @@
                     Visualizar
                 </div>
 
+                <p>Categoria: {{ $produto->categoria->nome }}</p>
                 <p>Id:   {{ $produto->id   }}</p>
                 <p>Nome: {{ $produto->nome }}</p>
                 <p>Descrição: {{ $produto->descricao }}</p>
