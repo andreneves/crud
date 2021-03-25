@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\ProdutoController;
+use App\Http\Controllers\CategoriaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -60,3 +61,8 @@ Route::put('/produto/{id}', [ProdutoController::class, 'update'])->name('produto
 
 // destroy - deleta um produto
 Route::delete('/produto/{id}', [ProdutoController::class, 'destroy'])->name('produto.destroy');
+
+
+//teste
+Route::get('/teste', [CategoriaController::class, 'teste'])->name('categoria.teste');
+
