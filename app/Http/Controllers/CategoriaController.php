@@ -10,6 +10,7 @@ class CategoriaController extends Controller
 {
 
 
+    // teste de relacionamento um para muitos de categoria para produtos
     public function teste()
     {
         $produtos = Categoria::findOrFail(2)->produtos;
